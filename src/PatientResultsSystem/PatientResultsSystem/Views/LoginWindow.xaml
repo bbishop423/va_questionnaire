@@ -1,0 +1,60 @@
+﻿<Window x:Class="PatientResultsSystem.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:PatientResultsSystem.ViewModels"
+        Title="LoginView" Height="220" Width="350"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <!-- Set window data context to view model -->
+    <Window.DataContext>
+        <viewModels:LoginViewModel/>
+    </Window.DataContext>
+    
+    <!-- Grid layout with 3 rows -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <!-- Error message that is set if login fails -->
+        <TextBlock Grid.Row="0" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center" 
+                   Text="{Binding Path=ErrorMessage}"/>
+        
+        <!-- TextBox and Label for user name -->
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Target="{Binding ElementName=UserNameTextBox}">_User Name:</Label>
+            <TextBox Name="UserNameTextBox" Height="25" Width="170" Text="{Binding Path=UserName, Mode=OneWayToSource}"/>
+        </WrapPanel>
+        
+        <!-- PasswordBox and Label for password -->
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Target="{Binding ElementName=PasswordTextBox}">_Password:</Label>
+            <PasswordBox Name="PasswordBox"  Height="25" Width="170" PasswordChanged="PasswordBox_OnPasswordChanged"/>
+        </WrapPanel>
+        
+        <!-- Buttons for cancel and log in -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Name="CancelButton" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding Path=CancelCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="8,0,4,0" Height="20" VerticalAlignment="Center" Source="../Resources/cancel_icon.png"/>
+                    <TextBlock Margin="4,0,8,0" Text="Cancel"/>
+                </StackPanel>
+            </Button>
+            <Button Name="LogInButton" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Command="{Binding Path=LogInCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Margin="8,0,4,0" Height="20" VerticalAlignment="Center" Source="../Resources/login_icon.png"/>
+                    <TextBlock Margin="4,0,8,0" Text="Login"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

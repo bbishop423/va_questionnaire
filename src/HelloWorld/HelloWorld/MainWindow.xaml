@@ -1,0 +1,10 @@
+﻿<Window x:Class="HelloWorld.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="MainWindow" Height="350" Width="525"
+        Background="SlateGray" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock Name="DisplayBlock" Foreground="DodgerBlue" FontSize="36" FontWeight="Bold" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>

@@ -1,0 +1,182 @@
+﻿<Window x:Class="PatientResultsSystem.Views.PatientInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:PatientResultsSystem.Converters"
+        xmlns:viewModels="clr-namespace:PatientResultsSystem.ViewModels"
+        Title="Patient Info: " Height="650" Width="600"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Icon="../Resources/favicon.ico" Loaded="OnLoaded">
+    <!-- Set window resources -->
+    <Window.Resources>
+        <!-- Converters -->
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibility"/>
+        
+        <!-- Set styles for textbox and combobox to make it simple to enable/disable -->
+        <Style TargetType="TextBox">
+            <Setter Property="IsEnabled" Value="{Binding FieldsEnabled}"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="IsEnabled" Value="{Binding FieldsEnabled}"/>
+        </Style>
+    </Window.Resources>
+    
+    <!-- Grid for displaying content -->
+    <ScrollViewer>
+        <Grid Margin="30,10,30,10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2.3*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Add multiple inputs to allow user to enter patient info -->
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="First Name: "/>
+            <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"
+                     Text="{Binding SelectedPatient.FirstName}"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Last Name: "/>
+            <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"
+                     Text="{Binding SelectedPatient.LastName}"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Middle Initial: "/>
+            <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"
+                     Text="{Binding SelectedPatient.MiddleInitial}"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="ID: "/>
+            <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"
+                     Text="{Binding SelectedPatient.ID}"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Provider Name: "/>
+            <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"
+                     Text="{Binding SelectedPatient.ProviderName}"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Clinician ID: "/>
+            <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Width="200" Margin="10,10,0,10"
+                     Text="{Binding SelectedPatient.ClinicianID}"/>
+
+            <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Date of Birth: "/>
+            <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10"  Text="Month:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding MonthSpan}" SelectedValue="{Binding DobMonth}"/>
+                <TextBlock Margin="10,10,5,10" Text="Day:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding DaySpan}" SelectedValue="{Binding DobDay}"/>
+                <TextBlock Margin="10,10,5,10" Text="Year:"/>
+                <ComboBox Width="80" Margin="0,10,0,10" ItemsSource="{Binding YearSpan}" SelectedValue="{Binding DobYear}"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Test Date: "/>
+            <StackPanel Grid.Row="7" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10"  Text="Month:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding MonthSpan}" SelectedValue="{Binding TestDateMonth}"/>
+                <TextBlock Margin="10,10,5,10" Text="Day:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding DaySpan}" SelectedValue="{Binding TestDateDay}"/>
+                <TextBlock Margin="10,10,5,10" Text="Year:"/>
+                <ComboBox Width="80" Margin="0,10,0,10" ItemsSource="{Binding YearSpan}" SelectedValue="{Binding TestDateYear}"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Left Ear Hearing Aid: "/>
+            <StackPanel Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Make:"/>
+                <TextBox Width="200" Margin="0,10,0,10" Text="{Binding LeftEarMake}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="9" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Model:"/>
+                <TextBox Width="200" Margin="0,10,0,10" Text="{Binding LeftEarModel}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="10" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Serial:"/>
+                <TextBox Width="200" Margin="0,10,0,10" Text="{Binding LeftEarSerial}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="11" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Fit Date:"/>
+                <TextBlock Margin="0,10,5,10"  Text="Month:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding MonthSpan}" SelectedValue="{Binding LeftEarFitMonth}"/>
+                <TextBlock Margin="10,10,5,10" Text="Day:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding DaySpan}" SelectedValue="{Binding LeftEarFitDay}"/>
+                <TextBlock Margin="10,10,5,10" Text="Year:"/>
+                <ComboBox Width="80" Margin="0,10,0,10" ItemsSource="{Binding YearSpan}" SelectedValue="{Binding LeftEarFitYear}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="12" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Style:"/>
+                <ComboBox Width="200" Margin="0,10,0,10" ItemsSource="{Binding HearingAidStyles}" SelectedValue="{Binding LeftEarStyle}"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="13" Grid.Column="0" HorizontalAlignment="Right" Margin="0,10,10,10" Text="Right Ear Hearing Aid: "/>
+            <StackPanel Grid.Row="13" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Make:"/>
+                <TextBox Width="200" Margin="0,10,0,10" Text="{Binding RightEarMake}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Model:"/>
+                <TextBox Width="200" Margin="0,10,0,10" Text="{Binding RightEarModel}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="15" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Serial:"/>
+                <TextBox Width="200" Margin="0,10,0,10" Text="{Binding RightEarSerial}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="16" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Fit Date:"/>
+                <TextBlock Margin="0,10,5,10"  Text="Month:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding MonthSpan}" SelectedValue="{Binding RightEarFitMonth}"/>
+                <TextBlock Margin="10,10,5,10" Text="Day:"/>
+                <ComboBox Width="40" Margin="0,10,0,10" ItemsSource="{Binding DaySpan}" SelectedValue="{Binding RightEarFitDay}"/>
+                <TextBlock Margin="10,10,5,10" Text="Year:"/>
+                <ComboBox Width="80" Margin="0,10,0,10" ItemsSource="{Binding YearSpan}" SelectedValue="{Binding RightEarFitYear}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="17" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Margin="10,10,5,10" Text="Style:"/>
+                <ComboBox Width="200" Margin="0,10,0,10" ItemsSource="{Binding HearingAidStyles}" SelectedValue="{Binding RightEarStyle}"/>
+            </StackPanel>
+
+            <TextBlock Grid.Row="18" Grid.Column="0" Margin="0,10,10,10" HorizontalAlignment="Right" Text="Comments: "/>
+            <TextBox Grid.Row="18" Grid.Column="1" Margin="10,10,0,10" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"
+                     Width="330" Height="75" HorizontalScrollBarVisibility="Visible" Text="{Binding SelectedPatient.Comments}"/>
+
+            <StackPanel Grid.Row="19" Grid.Column="1" Orientation="Horizontal">
+                <Button Margin="0,10,15,10" Command="{Binding CloseCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="8,0,4,0" Height="20" VerticalAlignment="Center" Source="../Resources/cancel_icon.png"/>
+                        <TextBlock Margin="4,0,8,0" Text="Close"/>
+                    </StackPanel>
+                </Button>
+                <!-- Edit button is visible when fields are disabled -->
+                <Button Margin="15,10,0,10" Command="{Binding EditPatientCommand}" Visibility="{Binding FieldsEnabled, 
+                        Converter={StaticResource BoolToVisibility}, ConverterParameter=CollapsedOnTrue}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="8,0,4,0" Height="20" VerticalAlignment="Center" Source="../Resources/edit_icon.png"/>
+                        <TextBlock Margin="4,0,8,0" Text="Edit Patient"/>
+                    </StackPanel>
+                </Button>
+                <!-- Once user clicks 'Edit', the Save button becomes visible -->
+                <Button Margin="15,10,0,10" Command="{Binding SaveCommand}" Visibility="{Binding FieldsEnabled, 
+                        Converter={StaticResource BoolToVisibility}, ConverterParameter=VisibleOnTrue}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Margin="8,0,4,0" Height="20" VerticalAlignment="Center" Source="../Resources/save_icon.png"/>
+                        <TextBlock Margin="4,0,8,0" Text="Save Patient"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

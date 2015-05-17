@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HelloWorldDb" Class="HelloWorldDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\HelloWorldDb.mdf;Integrated Security=True" SettingsObjectName="HelloWorld.Properties.Settings" SettingsPropertyName="HelloWorldDbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DisplayStrings" Member="DisplayStrings">
+    <Type Name="DisplayString">
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
