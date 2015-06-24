@@ -28,7 +28,7 @@ TEAM 1 MEMBERS
 	* Email: bishopbj@goldmail.etsu.edu
 	* Phone: (423) 302-0187
 	* Bitbucket: bishopbj
-	* Skills: Data structure and design, Database design and architecture, SQL, C#, Application database access
+	* Skills: Data structure and design, Database design, SQL, C#, Application database access
 
 * Chris Hartsock:
 -----
