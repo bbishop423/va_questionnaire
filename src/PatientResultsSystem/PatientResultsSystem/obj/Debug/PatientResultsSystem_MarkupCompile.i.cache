@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\WS\project_1\src\PatientResultsSystem\PatientResultsSystem\obj\Debug\
+C:\Users\bpc423\Desktop\skewl\csci_3250\github\va_questionnaire\src\PatientResultsSystem\PatientResultsSystem\obj\Debug\
 PatientResultsSystem
 none
 false
 DEBUG;TRACE
-C:\WS\project_1\src\PatientResultsSystem\PatientResultsSystem\App.xaml
+C:\Users\bpc423\Desktop\skewl\csci_3250\github\va_questionnaire\src\PatientResultsSystem\PatientResultsSystem\App.xaml
 101860664328
 
-43-1922882320
-21-231972446
+43-360220424
+21-224047135
 Views\AddPatientView.xaml;Views\AddUserView.xaml;Views\ClinicianQuestionnaireView.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\PatientInfoWindow.xaml;Views\MainView.xaml;Views\PatientQuestionnaireView.xaml;Views\ReportView.xaml;Views\SelectQuestionnaireView.xaml;
 
 True

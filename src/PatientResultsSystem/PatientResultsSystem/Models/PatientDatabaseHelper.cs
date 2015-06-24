@@ -239,7 +239,7 @@ namespace PatientResultsSystem.Models
 			{
 				string stmtToUpdatePatient = string.Format ("UPDATE Patients SET FirstName='" + patient.FirstName + "', LastName='" + patient.LastName + 
 					"', MiddleInitial='" + patient.MiddleInitial + "', ProviderName='" + patient.ProviderName + "', TestDate='" + DateTimeToSQLite (patient.TestDate) + 
-					"', DOB='" + DateTimeToSQLite (patient.DoB) + "', Comments='" + patient.Comments + "' WHERE idNumber='" + patient.ID + "'");
+					"', DOB='" + DateTimeToSQLite(patient.DoB) + "', Comments='" + patient.Comments + "' WHERE idNumber='" + patient.ID + "'");
 
 				using (SQLiteCommand sqlQuery = new SQLiteCommand (stmtToUpdatePatient, _dbConnection))
 				{
