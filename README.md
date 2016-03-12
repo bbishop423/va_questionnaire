@@ -3,7 +3,6 @@ TEAM 1 SCRUM MASTER
 * Matt Bise:
 -----
 	* Email: biseme@goldmail.etsu.edu
-	* Phone: (276) 759-2988
 	* Bitbucket: biseme
 	* Skills: UI and code behind dev, WPF, XAML, C#, application architecture design
 
@@ -12,28 +11,24 @@ TEAM 1 MEMBERS
 * Brian McNeese:
 -----
 	* Email: mcneeseb@goldmail.etsu.edu
-	* Phone: (423) 773-0065
 	* Bitbucket: mcneeseb
 	* Skills: VS2013, C# Application Development
 
 * Jason Arnold:
 -----
 	* Email: arnoldjd1@goldmail.etsu.edu
-	* Phone: (423) 483-8432
 	* Bitbucket: arnoldjd1
 	* Skills: Code Development, C# , Application Architecture Design 
 	
 * Benjamin Bishop:
 -----
 	* Email: bishopbj@goldmail.etsu.edu
-	* Phone: (423) 302-0187
 	* Bitbucket: bishopbj
 	* Skills: Data structure and design, Database design, SQL, C#, Application database access
 
 * Chris Hartsock:
 -----
 	* Email: hartsockc@goldmail.etsu.edu
-	* Phone: (423) 502-3262
 	* Bitbucket: hartsockc
 	*Skills: VS2013, C#, Basic XML
 
